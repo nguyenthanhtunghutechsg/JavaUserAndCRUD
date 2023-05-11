@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Create</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript"
+	src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div align="center" class="container text-center">
+		<h1>Create</h1>
+		<br />
+		<form action="#" th:action="@{/products/save}" th:object="${product}"
+			method="post">
+
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>Product Name:</td>
+					<td><input type="text" th:field="*{name}" class="form-control" required minlength="2" maxlength="255"/></td>
+				</tr>
+				<tr>
+					<td>Brand:</td>
+					<td><input type="text" th:field="*{brand}" class="form-control" minlength="2" maxlength="255"/></td>
+				</tr>
+				<tr>
+					<td>Made In:</td>
+					<td><input type="text" th:field="*{madein}" class="form-control" minlength="2" maxlength="255"/></td>
+				</tr>
+				<tr>
+					<td>Price:</td>
+					<td><input type="text" th:field="*{price}" class="form-control" minlength="2" maxlength="255"/></td>
+				</tr>
+				<tr>
+					<td colspan="2"><button class="btn btn-primary" type="submit">Save</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
